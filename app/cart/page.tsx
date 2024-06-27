@@ -37,7 +37,7 @@ function CartPage({ size = 100 }: Props) {
   return (
     <div className="grid  sm:grid-col-1 md:grid-cols-2 lg:grid-cols-3  gap-5">
       {cartItems.map((cartItem) => (
-        <CartProducts key={cartItem.id} product={cartItem} />
+        <CartProducts key={cartItem.id} product={cartItem} productId={0} />
       ))}
     </div>
   );

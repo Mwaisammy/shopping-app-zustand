@@ -1,12 +1,12 @@
-import React from "react";
-import Counter from "./components/counter";
-import Person from "./components/person";
+import ManyThings from "./components/many-things";
 
 function Home() {
   return (
     <div>
-      <Counter />
-      <Person />
+      {/* <Counter />
+      <Person /> */}
+
+      <ManyThings />
     </div>
   );
 }

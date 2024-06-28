@@ -6,13 +6,12 @@ import { Button } from "./ui/button";
 import { toast } from "sonner";
 
 type Props = {
-  size?: number;
   product: cartProduct;
-  productId: number;
 };
 
-function CartProducts({ size = 100, product }: Props) {
+function CartProducts({ product }: Props) {
   const { removeCartItem } = useCartStore();
+  // console.log(product);
 
   function onRemoveCartItem() {
     removeCartItem(product.id);
@@ -25,8 +24,8 @@ function CartProducts({ size = 100, product }: Props) {
           <Image
             src={product.image}
             alt="products"
-            width={size}
-            height={size}
+            width={100}
+            height={100}
             className="object-contain"
           />
 

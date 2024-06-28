@@ -5,11 +5,9 @@ import { useCartStore } from "@/store/cart-store";
 import Image from "next/image";
 import Link from "next/link";
 
-type Props = {
-  size?: number;
-};
+type Props = {};
 
-function CartPage({ size = 100 }: Props) {
+function CartPage() {
   const { cartItems } = useCartStore();
 
   if (cartItems && cartItems.length === 0) {
@@ -19,8 +17,8 @@ function CartPage({ size = 100 }: Props) {
           <Image
             src={"/empty-cart.png"}
             alt="cart-empty"
-            height={size}
-            width={size}
+            height={100}
+            width={100}
             className="size-30"
           />
           <h2 className="font-semibold text-lg tracking-wider">
@@ -37,7 +35,7 @@ function CartPage({ size = 100 }: Props) {
   return (
     <div className="grid  sm:grid-col-1 md:grid-cols-2 lg:grid-cols-3  gap-5">
       {cartItems.map((cartItem) => (
-        <CartProducts key={cartItem.id} product={cartItem} productId={0} />
+        <CartProducts key={cartItem.id} product={cartItem} />
       ))}
     </div>
   );

@@ -11,10 +11,9 @@ import { toast } from "sonner";
 // };
 type Props = {
   product: Product;
-  size?: number;
 };
 
-function ProductsPage({ product, size = 100 }: Props) {
+function ProductsPage({ product }: Props) {
   const { addCartItem } = useCartStore();
 
   const onAddCartItem = () => {
@@ -28,8 +27,8 @@ function ProductsPage({ product, size = 100 }: Props) {
           <Image
             src={product.image}
             alt="products"
-            width={size}
-            height={size}
+            width={100}
+            height={100}
             className="object-contain"
           />
 

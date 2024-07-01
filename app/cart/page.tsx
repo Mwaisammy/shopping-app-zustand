@@ -5,8 +5,6 @@ import { useCartStore } from "@/store/cart-store";
 import Image from "next/image";
 import Link from "next/link";
 
-type Props = {};
-
 function CartPage() {
   const { cartItems } = useCartStore();
 

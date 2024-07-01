@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import CartButton from "./cart-button";
+import { ClerkLoaded, ClerkLoading, UserButton } from "@clerk/nextjs";
+import { Loader } from "lucide-react";
 
 function Header({ size = 100 }: { size?: number }) {
   return (
@@ -21,7 +23,17 @@ function Header({ size = 100 }: { size?: number }) {
         </Link>
       </div>
 
-      <CartButton />
+      <div className="flex items-center space-x-3">
+        <CartButton />
+
+        <ClerkLoading>
+          <Loader className="animate-spin text-muted-foreground size-5" />
+        </ClerkLoading>
+
+        <ClerkLoaded>
+          <UserButton />
+        </ClerkLoaded>
+      </div>
     </div>
   );
 }

@@ -5,6 +5,7 @@ import QueryProvider from "@/providers/query-provider";
 import Header from "./components/header";
 import { cn } from "@/lib/utils";
 import { Toaster } from "sonner";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,12 +22,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn("pt-3 pr-5 pl-5", inter.className)}>
-        <QueryProvider>
-          <Header />
-          <Toaster />
+        <ClerkProvider>
+          <QueryProvider>
+            <Toaster />
 
-          {children}
-        </QueryProvider>
+            {children}
+          </QueryProvider>
+        </ClerkProvider>
       </body>
     </html>
   );

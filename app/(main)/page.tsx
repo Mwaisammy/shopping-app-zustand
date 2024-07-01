@@ -1,4 +1,4 @@
-import ManyThings from "./components/many-things";
+import ManyThings from "../components/many-things";
 
 function Home() {
   return (

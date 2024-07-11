@@ -1,6 +1,8 @@
 "use client";
+import CheckoutComponent from "@/app/components/checkout-component";
 import CartProducts from "@/components/cart-products";
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 import { useCartStore } from "@/store/cart-store";
 import Image from "next/image";
 import Link from "next/link";
@@ -31,11 +33,19 @@ function CartPage() {
     );
   }
   return (
-    <div className="grid  sm:grid-col-1 md:grid-cols-2 lg:grid-cols-3  gap-5">
-      {cartItems.map((cartItem) => (
-        <CartProducts key={cartItem.id} product={cartItem} />
-      ))}
-    </div>
+    <main className="flex flex-col md:flex-row gap-5">
+      <div className="space-y-4 w-full">
+        {cartItems.map((cartItem) => (
+          <CartProducts key={cartItem.id} product={cartItem} />
+        ))}
+      </div>
+
+      {/* <Separator className="my-4" /> */}
+
+      <div className="w-full md:w-1/3">
+        <CheckoutComponent />
+      </div>
+    </main>
   );
 }
 

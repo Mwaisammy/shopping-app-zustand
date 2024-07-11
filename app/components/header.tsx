@@ -6,7 +6,7 @@ import { Loader } from "lucide-react";
 
 function Header({ size = 100 }: { size?: number }) {
   return (
-    <div className="flex items-center justify-between  w-full  sticky top-0 bg-white p-3">
+    <div className="flex items-center justify-between  w-full  sticky top-0 bg-white z-10 p-3">
       <div className="">
         <Link href={"/"} className="flex items-center space-x-4 ">
           <Image

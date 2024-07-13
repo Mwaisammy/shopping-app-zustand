@@ -26,7 +26,7 @@ export default function RootLayout({
         <body className={cn("pt-3 pr-5 pl-5", inter.className)}>
           <QueryProvider>
             {/* <BoughtProducts /> */}
-            <Toaster />
+            <Toaster position="top-center" />
 
             {children}
           </QueryProvider>

@@ -23,7 +23,12 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={cn("pt-3 pr-5 pl-5", inter.className)}>
+        <body
+          className={cn(
+            "md:pt-3 px-2 py-1  md:pr-5 md:pl-5 shrink-0 md:shrink",
+            inter.className
+          )}
+        >
           <QueryProvider>
             {/* <BoughtProducts /> */}
             <Toaster position="top-center" />
